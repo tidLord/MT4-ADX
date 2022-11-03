@@ -358,7 +358,7 @@ void OnTick()
      {
       if(buy==True && last_action_time!=Time[0] && AllowBUY==true)
         {
-         if(!OrderSend(Symbol(),OP_BUY,OrderSize,Ask,Slippage,0,0,"TAR-ADX -> BUY",MagicNumber,0,clrGreen))
+         if(!OrderSend(Symbol(),OP_BUY,OrderSize,Ask,Slippage,0,0,"tidLord-ADX -> BUY",MagicNumber,0,clrGreen))
            {
             Print(GetLastError());
            }
@@ -370,7 +370,7 @@ void OnTick()
       else
          if(sell==True && last_action_time!=Time[0] && AllowSELL==true)
            {
-            if(!OrderSend(Symbol(),OP_SELL,OrderSize,Bid,Slippage,0,0,"TAR-ADX -> SELL",MagicNumber,0,clrRed))
+            if(!OrderSend(Symbol(),OP_SELL,OrderSize,Bid,Slippage,0,0,"tidLord-ADX -> SELL",MagicNumber,0,clrRed))
 
               {
                Print(GetLastError());
@@ -410,7 +410,7 @@ void OnTick()
            }
          if(Ask<last_order_price-DCA_GAP*Point && rsi<30 && last_action_time!=Time[0] && last_order_type=="buy")
            {
-            if(!OrderSend(Symbol(),OP_BUY,lot_DCA,Ask,Slippage,0,0,"TAR-ADX -> BuyDCA",MagicNumber,0,clrGreen))
+            if(!OrderSend(Symbol(),OP_BUY,lot_DCA,Ask,Slippage,0,0,"tidLord-ADX -> BuyDCA",MagicNumber,0,clrGreen))
               {
                Print(GetLastError());
               }
@@ -422,7 +422,7 @@ void OnTick()
            }
          if(Bid>last_order_price+DCA_GAP*Point && rsi>70 && last_action_time!=Time[0] && last_order_type=="sell")
            {
-            if(!OrderSend(Symbol(),OP_SELL,lot_DCA,Bid,Slippage,0,0,"TAR-ADX -> SellDCA",MagicNumber,0,clrRed))
+            if(!OrderSend(Symbol(),OP_SELL,lot_DCA,Bid,Slippage,0,0,"tidLord-ADX -> SellDCA",MagicNumber,0,clrRed))
               {
                Print(GetLastError());
               }
